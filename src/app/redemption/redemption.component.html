@@ -1,0 +1,25 @@
+<div class="rewards-catalog">
+  <h2>Redeem Your Rewards</h2>
+  @for ( reward of rewards ;track reward){
+  <div class="reward">
+    <div class="reward-info">
+      <h3>{{ reward.name }}</h3>
+      <p>{{ reward.description }}</p>
+      <span>Points: {{ reward.points }}</span>
+    </div>
+    <button
+      (click)="selectReward(reward)"
+      [disabled]="selectedReward && selectedReward !== reward"
+    >
+      {{ selectedReward === reward ? "Selected" : "Select Reward" }}
+    </button>
+  </div>
+  } @if("selectedReward"){
+  <div class="selected-reward">
+    <h3>You have selected: {{ selectedReward.name }}</h3>
+    <button (click)="redeem()">Confirm Redemption</button>
+  </div>
+  } @if("redemptionMessage"){
+  <p>{{ redemptionMessage }}</p>
+  }
+</div>

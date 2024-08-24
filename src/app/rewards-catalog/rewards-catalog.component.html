@@ -1,0 +1,14 @@
+<div class="rewards-catalog">
+  <h2>Rewards Catalog</h2>
+  <div class="reward">
+    @for( reward of rewards;track reward){
+    <div class="reward-info">
+      <h3>{{ reward.name }}</h3>
+      <p>{{ reward.description }}</p>
+      <span>{{ reward.points }} points</span>
+    </div>
+
+    <button (click)="redeem(reward)">Redeem</button>
+    }
+  </div>
+</div>

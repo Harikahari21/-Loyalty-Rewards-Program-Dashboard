@@ -1,0 +1,13 @@
+<div class="points-summary">
+  <h2>Points Summary</h2>
+  <div class="balance">Current Balance: {{ points.balance }}</div>
+  <div class="earned">
+    <h3>Points Earned</h3>
+    <ul>
+      @for (item of points.earned;track points){
+      <li>{{ item.activity }}: {{ item.points }} points</li>
+      }
+    </ul>
+  </div>
+  <div class="expiring">Points expiring soon: {{ points.expiringSoon }}</div>
+</div>
